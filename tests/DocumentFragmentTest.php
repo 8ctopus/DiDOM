@@ -7,13 +7,14 @@ use DiDom\DocumentFragment;
 use DOMElement;
 use InvalidArgumentException;
 
-class DocumentFragmentTest extends TestCase
+class DocumentFragmentTest extends TestCaseDiDom
 {
     /**
-     * @expectedException InvalidArgumentException
      */
     public function testConstructorWithInvalidNodeType()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         new DocumentFragment(new DOMElement('span'));
     }
 
